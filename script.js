@@ -76,23 +76,27 @@ function mostrarSlides(){
     const mensaje =
         document.getElementById("mensaje");
 
-    foto.style.opacity = 0;
+foto.style.opacity = 0;
 
-    setTimeout(() => {
+setTimeout(() => {
 
-    foto.src = fotos[indice];
+    foto.src = fotos[index];
 
-    mensaje.innerText = mensajes[indice];
+    mensaje.innerText = mensajes[index];
 
     foto.style.opacity = 1;
 
-}, 500);
+}, 1000);
 
     indice++;
 
     /* 9 segundos por foto */
 
-    setTimeout(mostrarSlides,9000);
+    setTimeout(() => {
+
+    mostrarSlides();
+
+}, 1000);
 }
 
 /* Corazones flotando */
