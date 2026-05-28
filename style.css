@@ -1,6 +1,10 @@
 #inicio{
 
-    gap:40px;
+    justify-content:flex-start;
+
+    padding-top:120px;
+
+    gap:50px;
 }
 *{
     margin:0;
@@ -251,12 +255,13 @@ button:hover{
 
 @media(max-width:768px){
 
-    #inicio{
+#inicio{
 
-    justify-content:center;
+    padding-top:80px;
 
-    gap:60px;
+    gap:40px;
 }
+
 
 .typing{
 
