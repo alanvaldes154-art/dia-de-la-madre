@@ -83,27 +83,38 @@ function iniciar(){
 /* ── Mostrar fotos ── */
 function mostrarSlides(){
 
+    // Si ya no hay más fotos → mostrar final
+    if(indice >= fotos.length){
+
+        slideshow.classList.add("oculto");
+
+        finalSec.classList.remove("oculto");
+
+        return;
+    }
+
+    // Fade out
     foto.style.opacity = 0;
 
     setTimeout(() => {
 
+        // ✅ Reiniciar animación zoom
+        foto.style.animation = "none";
+        foto.offsetHeight; // forzar reflow
+        foto.style.animation = "zoom 8s linear forwards";
+
+        // Cargar foto y mensaje del indice actual
         foto.src = fotos[indice];
 
         mensaje.innerText = mensajes[indice];
 
+        // Fade in
         foto.style.opacity = 1;
 
+        // Avanzar indice DESPUÉS de mostrar
         indice++;
 
-        if(indice >= fotos.length){
-
-            slideshow.classList.add("oculto");
-
-            finalSec.classList.remove("oculto");
-
-            return;
-        }
-
+        // Siguiente foto en 8 segundos
         setTimeout(mostrarSlides, 8000);
 
     }, 1000);
