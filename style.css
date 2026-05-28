@@ -1,10 +1,20 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 body{
 
     margin:0;
     overflow:hidden;
-    background:black;
+    background:
+    radial-gradient(circle at top, #1b2735 0%, #090a0f 70%);
+    background-attachment:fixed;
     color:white;
-    font-family:Arial;
+    font-family:'Poppins', sans-serif;
+
+    width:100%;
+    min-height:100vh;
 }
 
 /* Pantallas */
@@ -13,8 +23,8 @@ body{
 #slideshow,
 #final{
 
-    width:100vw;
-    height:100vh;
+    width:100%;
+    min-height:100vh;
 
     display:flex;
     flex-direction:column;
@@ -23,8 +33,13 @@ body{
     align-items:center;
 
     position:relative;
-}
 
+    text-align:center;
+
+    padding:20px;
+
+    box-sizing:border-box;
+}
 /* Ocultar */
 
 .oculto{
@@ -42,7 +57,10 @@ body{
 
     box-shadow:0 0 40px rgba(255,255,255,0.3);
 
-    animation:zoom 8s linear;
+    animation:
+    zoom 8s linear,
+    desvanecer 8s ease-in-out;
+    transition:opacity 0.5s ease;
 }
 
 /* Zoom cinematográfico */
@@ -55,6 +73,25 @@ body{
 
     to{
         transform:scale(1.08);
+    }
+}
+
+@keyframes desvanecer{
+
+    0%{
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
     }
 }
 
@@ -118,37 +155,33 @@ button:hover{
 
 .typing{
 
-    width:0;
+    max-width:90%;
 
     overflow:hidden;
 
-    white-space:nowrap;
+    white-space:normal;
+
+    text-align:center;
+
+    margin:auto;
 
     border-right:3px solid white;
 
     animation:
-        escribir 5s steps(40,end) forwards,
+        aparecer 3s forwards,
         cursor 1s infinite;
 }
 
-@keyframes escribir{
+@keyframes aparecer{
 
     from{
-        width:0;
+        opacity:0;
     }
 
     to{
-        width:100%;
+        opacity:1;
     }
 }
-
-@keyframes cursor{
-
-    50%{
-        border-color:transparent;
-    }
-}
-
 /* Corazones */
 
 #particulas{
@@ -206,5 +239,90 @@ button:hover{
 
     100%{
         transform:scale(1);
+    }
+}
+/* CELULARES */
+
+@media(max-width:768px){
+
+    #foto{
+
+        width:95%;
+        max-width:320px;
+    }
+
+    #mensaje{
+
+        font-size:1.3rem;
+
+        padding:0 10px;
+    }
+
+    .final-texto{
+
+        font-size:2.2rem;
+
+        text-align:center;
+    }
+
+    h1{
+
+        font-size:1.8rem;
+
+        line-height:1.4;
+    }
+
+    button{
+
+        width:80%;
+        max-width:250px;
+    }
+}
+/* ESTRELLAS */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 2px, transparent 2px);
+
+    background-size:
+    100px 100px,
+    150px 150px,
+    200px 200px;
+
+    background-position:
+    0 0,
+    40px 60px,
+    130px 270px;
+
+    opacity:0.4;
+
+    z-index:-2;
+
+    animation:estrellas 60s linear infinite;
+}
+
+/* Movimiento suave */
+
+@keyframes estrellas{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-200px);
     }
 }

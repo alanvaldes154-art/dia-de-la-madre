@@ -78,15 +78,15 @@ function mostrarSlides(){
 
     foto.style.opacity = 0;
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        foto.src = fotos[indice];
+    foto.src = fotos[indice];
 
-        mensaje.innerText = mensajes[indice];
+    mensaje.innerText = mensajes[indice];
 
-        foto.style.opacity = 1;
+    foto.style.opacity = 1;
 
-    },1000);
+}, 500);
 
     indice++;
 
@@ -129,3 +129,8 @@ function crearCorazones(){
 
     },500);
 }
+window.addEventListener("click", () => {
+
+    document.getElementById("musica").play();
+
+}, { once:true });
