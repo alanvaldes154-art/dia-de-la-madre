@@ -1,3 +1,7 @@
+#inicio{
+
+    gap:40px;
+}
 *{
     margin:0;
     padding:0;
@@ -155,7 +159,7 @@ button:hover{
 
 .typing{
 
-    max-width:90%;
+    max-width:300px;
 
     overflow:hidden;
 
@@ -164,6 +168,8 @@ button:hover{
     text-align:center;
 
     margin:auto;
+
+    line-height:1.5;
 
     border-right:3px solid white;
 
@@ -244,6 +250,20 @@ button:hover{
 /* CELULARES */
 
 @media(max-width:768px){
+
+    #inicio{
+
+    justify-content:center;
+
+    gap:60px;
+}
+
+.typing{
+
+    font-size:1.5rem;
+
+    max-width:250px;
+}
 
     #foto{
 
