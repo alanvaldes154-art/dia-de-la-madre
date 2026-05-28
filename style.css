@@ -1,10 +1,6 @@
 #inicio{
 
-    justify-content:flex-start;
-
-    padding-top:120px;
-
-    gap:50px;
+    gap:15px;
 }
 *{
     margin:0;
@@ -149,7 +145,7 @@ button{
 
     cursor:pointer;
 
-    margin-top:30px;
+    margin-top:5px;
 
     transition:0.3s;
 }
@@ -163,17 +159,17 @@ button:hover{
 
 .typing{
 
-    max-width:300px;
+    max-width:280px;
+
+    text-align:center;
+
+    line-height:1.4;
+
+    margin:0;
 
     overflow:hidden;
 
     white-space:normal;
-
-    text-align:center;
-
-    margin:auto;
-
-    line-height:1.5;
 
     border-right:3px solid white;
 
@@ -181,7 +177,6 @@ button:hover{
         aparecer 3s forwards,
         cursor 1s infinite;
 }
-
 @keyframes aparecer{
 
     from{
@@ -257,9 +252,7 @@ button:hover{
 
 #inicio{
 
-    padding-top:80px;
-
-    gap:40px;
+    gap:20px;
 }
 
 
