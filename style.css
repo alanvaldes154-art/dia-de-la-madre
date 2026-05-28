@@ -324,3 +324,19 @@ body::before{
         transform:translateY(-200px);
     }
 }
+/* Cuenta regresiva */
+
+#cuentaRegresiva{
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    color:#ff2e63;
+
+    min-height:80px;
+
+    animation:latido 1s infinite;
+
+    line-height:1;
+}

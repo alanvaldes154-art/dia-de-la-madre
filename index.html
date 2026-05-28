@@ -6,12 +6,12 @@
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
-        
-          <link rel="preconnect" href="https://fonts.googleapis.com">
 
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <title>Para Mamá ❤️</title>
 
@@ -27,8 +27,7 @@
     <!-- Música -->
     <audio id="musica" autoplay loop>
 
-        <source src="musica/cancion.mp3"
-                type="audio/mp3">
+        <source src="musica/cancion.mp3" type="audio/mp3">
 
     </audio>
 
@@ -39,7 +38,10 @@
             Para la mejor mamá del mundo ❤️
         </h1>
 
-        <button onclick="iniciar()">
+        <!-- Cuenta regresiva -->
+        <div id="cuentaRegresiva">10</div>
+
+        <button id="btnComenzar" onclick="iniciar()">
             Comenzar
         </button>
 
