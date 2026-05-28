@@ -55,50 +55,33 @@ function iniciar(){
 
 function mostrarSlides(){
 
-    if(indice >= fotos.length){
-
-        document
-            .getElementById("slideshow")
-            .classList
-            .add("oculto");
-
-        document
-            .getElementById("final")
-            .classList
-            .remove("oculto");
-
-        return;
-    }
-
-    const foto =
-        document.getElementById("foto");
-
-    const mensaje =
-        document.getElementById("mensaje");
-
-foto.style.opacity = 0;
-
-setTimeout(() => {
-
-    foto.src = fotos[index];
-
-    mensaje.innerText = mensajes[index];
-
-    foto.style.opacity = 1;
-
-}, 1000);
-
-    indice++;
-
-    /* 9 segundos por foto */
+    foto.style.opacity = 0;
 
     setTimeout(() => {
 
-    mostrarSlides();
+        foto.src = fotos[index];
 
-}, 1000);
+        mensaje.innerText = mensajes[index];
+
+        foto.style.opacity = 1;
+
+        index++;
+
+        if(index >= fotos.length){
+
+            inicio.classList.add("oculto");
+
+            slideshow.classList.add("oculto");
+
+            final.classList.remove("oculto");
+
+            return;
+        }
+
+        setTimeout(mostrarSlides, 8000);
+
+    }, 1000);
 }
-
 /* Corazones flotando */
 
 function crearCorazones(){
