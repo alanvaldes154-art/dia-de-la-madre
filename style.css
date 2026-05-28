@@ -1,0 +1,210 @@
+body{
+
+    margin:0;
+    overflow:hidden;
+    background:black;
+    color:white;
+    font-family:Arial;
+}
+
+/* Pantallas */
+
+#inicio,
+#slideshow,
+#final{
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+/* Ocultar */
+
+.oculto{
+    display:none !important;
+}
+
+/* Foto */
+
+#foto{
+
+    width:80%;
+    max-width:500px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px rgba(255,255,255,0.3);
+
+    animation:zoom 8s linear;
+}
+
+/* Zoom cinematográfico */
+
+@keyframes zoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+/* Mensajes */
+
+#mensaje{
+
+    margin-top:25px;
+
+    font-size:2rem;
+
+    text-align:center;
+
+    animation:fade 2s;
+}
+
+/* Fade */
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* Botón */
+
+button{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ff2e63;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    margin-top:30px;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:scale(1.1);
+}
+
+/* Texto escribiéndose */
+
+.typing{
+
+    width:0;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    border-right:3px solid white;
+
+    animation:
+        escribir 5s steps(40,end) forwards,
+        cursor 1s infinite;
+}
+
+@keyframes escribir{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+@keyframes cursor{
+
+    50%{
+        border-color:transparent;
+    }
+}
+
+/* Corazones */
+
+#particulas{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:-1;
+}
+
+.corazon{
+
+    position:absolute;
+
+    color:pink;
+
+    animation:flotar linear infinite;
+}
+
+@keyframes flotar{
+
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* Final */
+
+.final-texto{
+
+    font-size:4rem;
+
+    animation:latido 1s infinite;
+}
+
+@keyframes latido{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
